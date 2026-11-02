@@ -1,0 +1,20 @@
+[package]
+name = "kspritegraph"
+version = "0.1.0"
+description = "KSpriteGraph desktop app"
+authors = ["you"]
+edition = "2021"
+
+[lib]
+name = "kspritegraph_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+image = "0.25.5"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+thiserror = "2.0.3"

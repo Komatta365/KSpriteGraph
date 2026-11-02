@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=optional");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vscode-bg: #1e1e1e;
+  --vscode-panel: #252526;
+  --vscode-border: #3c3c3c;
+  --vscode-text: #cccccc;
+  --vscode-muted: #969696;
+  --vscode-accent: #007acc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--vscode-bg);
+  color: var(--vscode-text);
+  font-family: "Segoe UI", "Yu Gothic UI", sans-serif;
+}
+
+.material-symbols-rounded {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.flexlayout__layout {
+  --color-text: var(--vscode-text);
+  --color-background: var(--vscode-panel);
+  --color-base: var(--vscode-panel);
+  --color-1: #2d2d30;
+  --color-2: #383838;
+  --color-3: #3c3c3c;
+  --color-4: #4b4b4b;
+  --color-5: #4f4f4f;
+  --color-6: #5a5a5a;
+}

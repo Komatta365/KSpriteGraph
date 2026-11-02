@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "KSpriteGraph",
+  "version": "0.1.0",
+  "identifier": "com.komatta.kspritegraph",
+  "build": {
+    "beforeDevCommand": "npm --prefix ../frontend run dev",
+    "beforeBuildCommand": "npm --prefix ../frontend run build",
+    "devUrl": "http://localhost:3000",
+    "frontendDist": "../frontend/out"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "KSpriteGraph",
+        "width": 1600,
+        "height": 1000,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all"
+  }
+}

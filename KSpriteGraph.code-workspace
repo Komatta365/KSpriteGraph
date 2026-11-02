@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "chat.tools.terminal.autoApprove": {
+      "git -C \"D:\\repository\\Github\\Komatta365\\KTools\\KSpriteGraph\"": true,
+    },
+  },
+}

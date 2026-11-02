@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "identifier": "com.komatta.kspritegraph",
   "build": {
-    "beforeDevCommand": "npm --prefix ../frontend run dev",
-    "beforeBuildCommand": "npm --prefix ../frontend run build",
+    "beforeDevCommand": "npm --prefix ./frontend run dev",
+    "beforeBuildCommand": "npm --prefix ./frontend run build",
     "devUrl": "http://localhost:3000",
     "frontendDist": "../frontend/out"
   },
@@ -24,6 +24,13 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all"
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ]
   }
 }

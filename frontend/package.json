@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "next typegen && tsc --noEmit",
-    "tauri": "tauri --config ../src-tauri/tauri.conf.json"
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev --config ../src-tauri/tauri.conf.json",
+    "tauri:build": "tauri build --config ../src-tauri/tauri.conf.json"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",

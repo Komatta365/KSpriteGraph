@@ -2,12 +2,12 @@
 setlocal
 
 set "SCRIPT_DIR=%~dp0"
-set "APP_EXE=%SCRIPT_DIR%src-tauri\target\release\app.exe"
+set "APP_EXE=%SCRIPT_DIR%src-tauri\target\release\KSpriteGraph.exe"
 
 pushd "%SCRIPT_DIR%" || exit /b 1
 
 if not exist "%APP_EXE%" (
-  call build-KSFXGraph-release.bat
+  call build-KSpriteGraph-release.bat
   if errorlevel 1 (
     set "EXIT_CODE=%ERRORLEVEL%"
     popd

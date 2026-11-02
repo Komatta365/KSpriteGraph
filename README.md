@@ -65,7 +65,7 @@ python -m pip install -r ai/requirements.txt
 
 ```bash
 cd frontend
-npm run tauri dev
+npm run tauri:dev
 ```
 
 ## 実装済み機能

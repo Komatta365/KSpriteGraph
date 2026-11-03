@@ -111,7 +111,8 @@ export function buildWorkflowTemplate(
       resolveNodeType([
         "OpenPosePreprocessor",
         "DWPreprocessor",
-        "DWPose_Preprocessor"
+        "DWPose_Preprocessor",
+        "DWPosePreprocessor"
       ]),
       {
       image: [poseInput, 0],

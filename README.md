@@ -49,10 +49,14 @@ npm install
 python -m pip install -r ai/requirements.txt
 ```
 
+`build-KSpriteGraph-debug.bat` / `build-KSpriteGraph-release.bat` / `run-KSpriteGraph-debug.bat` 実行時にも、
+必要な Python 依存関係（torch, diffusers など）を自動インストールします。
+
 ### 3) モデル配置
 
 - `models/checkpoints/` に `.safetensors` または `.ckpt` を配置
 - `models/vae/` に VAE ファイルを配置（任意）
+- `models/controlnet/` に DWPose / OpenPose 用 ControlNet を配置（任意、モーション指定時）
 
 例:
 
@@ -60,6 +64,10 @@ python -m pip install -r ai/requirements.txt
 - `models/checkpoints/DreamShaperXL.safetensors`
 - `models/checkpoints/JuggernautXL.safetensors`
 - `models/vae/sdxl_vae_fp16_fix.safetensors`
+- `models/controlnet/controlnet-openpose-sdxl.safetensors`
+
+VAE は任意です。UI の `VAE File` は空のままでも生成できます（未配置なら空推奨）。
+DWPose / モーション指定は `Pose Image` と `ControlNet Model` を設定したときに有効になります。
 
 ### 4) 起動
 

@@ -11,6 +11,9 @@ type AppState = {
   negativePrompt: string;
   checkpointFile: string;
   vaeFile: string;
+  poseImage: string;
+  controlNetFile: string;
+  poseStrength: number;
   outputPng: string;
   width: number;
   height: number;
@@ -19,6 +22,7 @@ type AppState = {
   seed: string;
   spriteInputDir: string;
   spriteOutputPng: string;
+  downscaleMode: "area" | "lanczos" | "nearestNeighbor";
   spriteColumns: number;
   spritePadding: number;
   spriteSortOrder: "nameAsc" | "nameDesc" | "modifiedAsc" | "modifiedDesc";
@@ -31,6 +35,9 @@ type AppState = {
   setNegativePrompt: (value: string) => void;
   setCheckpointFile: (value: string) => void;
   setVaeFile: (value: string) => void;
+  setPoseImage: (value: string) => void;
+  setControlNetFile: (value: string) => void;
+  setPoseStrength: (value: number) => void;
   setOutputPng: (value: string) => void;
   setWidth: (value: number) => void;
   setHeight: (value: number) => void;
@@ -39,6 +46,7 @@ type AppState = {
   setSeed: (value: string) => void;
   setSpriteInputDir: (value: string) => void;
   setSpriteOutputPng: (value: string) => void;
+  setDownscaleMode: (value: "area" | "lanczos" | "nearestNeighbor") => void;
   setSpriteColumns: (value: number) => void;
   setSpritePadding: (value: number) => void;
   setSpriteSortOrder: (
@@ -54,7 +62,10 @@ export const useAppStore = create<AppState>((set) => ({
   prompt: findPreset("sdxl-base").prompt,
   negativePrompt: findPreset("sdxl-base").negativePrompt,
   checkpointFile: findPreset("sdxl-base").checkpointFile,
-  vaeFile: "sdxl_vae_fp16_fix.safetensors",
+  vaeFile: "",
+  poseImage: "",
+  controlNetFile: "controlnet-openpose-sdxl.safetensors",
+  poseStrength: 1,
   outputPng: "outputs/generated.png",
   width: 1024,
   height: 1024,
@@ -63,6 +74,7 @@ export const useAppStore = create<AppState>((set) => ({
   seed: "",
   spriteInputDir: "outputs/frames",
   spriteOutputPng: "outputs/sprite-sheet.png",
+  downscaleMode: "nearestNeighbor",
   spriteColumns: 8,
   spritePadding: 0,
   spriteSortOrder: "nameAsc",
@@ -85,6 +97,9 @@ export const useAppStore = create<AppState>((set) => ({
   setNegativePrompt: (value) => set({ negativePrompt: value }),
   setCheckpointFile: (value) => set({ checkpointFile: value }),
   setVaeFile: (value) => set({ vaeFile: value }),
+  setPoseImage: (value) => set({ poseImage: value }),
+  setControlNetFile: (value) => set({ controlNetFile: value }),
+  setPoseStrength: (value) => set({ poseStrength: value }),
   setOutputPng: (value) => set({ outputPng: value }),
   setWidth: (value) => set({ width: value }),
   setHeight: (value) => set({ height: value }),
@@ -93,6 +108,7 @@ export const useAppStore = create<AppState>((set) => ({
   setSeed: (value) => set({ seed: value }),
   setSpriteInputDir: (value) => set({ spriteInputDir: value }),
   setSpriteOutputPng: (value) => set({ spriteOutputPng: value }),
+  setDownscaleMode: (value) => set({ downscaleMode: value }),
   setSpriteColumns: (value) => set({ spriteColumns: value }),
   setSpritePadding: (value) => set({ spritePadding: value }),
   setSpriteSortOrder: (value) => set({ spriteSortOrder: value }),
